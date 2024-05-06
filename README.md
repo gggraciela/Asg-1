@@ -1,11 +1,10 @@
-**Self-graded Assignment 1 Checklist
+## Self-graded Assignment 1 Checklist
 Student Name: Graciela A
 Student Set: B
 
     Criteria	
     
     [x]  A home page links to signup and login, if not logged in; and links to members and signout, if logged in.
-    <br>
     [x]  A members page that displays 1 of 3 random images stored on the server.
     [x]  The members page will redirect to the home page if no valid session is found.
     [x]  The signout buttons end the session.
