@@ -12,7 +12,7 @@ const saltRounds = 12;
 // for session storage in mongoDB ( sessions for logged in verified users )
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-const expireTime = 1000 * 60 * 60; // expires after 1 hour in milliseconds ( 1000ms * 60s * 60m = 1 hour)
+const expireTime = 1000 * 60 * 60 * 1; // expires after 1 hour in milliseconds ( 1000ms * 60s * 60m *1d = 1 hour)
 
 // to store users in mongoDB
 const Joi = require("joi");
@@ -209,6 +209,7 @@ app.post('/loginSubmit', async (req, res) => {
 
 app.get('/members', async (req, res) => {
   var username = req.session.username;
+  req.session.cookie.maxAge = expireTime;
 
   if (!req.session.authenticated) {
     res.redirect('/');
