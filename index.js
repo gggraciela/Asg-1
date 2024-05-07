@@ -233,7 +233,9 @@ app.get('/members', async (req, res) => {
 
     <br><br><img src='${pic}' style='width:250px;'>
 
-    <br><br><a href='/logout'>Log out</a>
+    <form action='/logout' method='get'>
+      <button>Log out</button>
+    </form>
   `;
   res.send(html);
 });
